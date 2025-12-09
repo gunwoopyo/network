@@ -2,8 +2,10 @@
 #include <QMessageBox>
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "RouteWorker.h"
+#include "RouterWorker.h"
 #include "DeviceInfoWorker.h"
+
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow) {
@@ -19,16 +21,32 @@ MainWindow::MainWindow(QWidget *parent)
     registerDeviceWindow->show();
     connect(registerDeviceWindow, &RegisterDeviceWindow::startThreadRequested, this, &MainWindow::startMyThread);
 
-    // route 테이블
-    connect(ui->routeTable, &QPushButton::clicked, this, [this]() {
-        RouteTableWindow* routeTableWindow = new RouteTableWindow(nullptr);
-        routeTableWindow->show(); });
-
     // arp 테이블
-    connect(ui->searchTable, &QPushButton::clicked, this, []() {
-        arptablewindow* tableWindow = new arptablewindow(nullptr);
-        tableWindow->show();});
+    connect(ui->arpTablePushButton, &QPushButton::clicked, this, [this]() {
+        ArpTableWindow* arpTableWindow = new ArpTableWindow(this);
+        arpTableWindow->setWindowModality(Qt::WindowModal);
+        QSize dlgSize = arpTableWindow->size();
+        QPoint center = this->geometry().center();
+        QPoint topLeft = center - QPoint(dlgSize.width()/2, dlgSize.height()/2);
+        arpTableWindow->move(topLeft);
+        arpTableWindow->show();
+    });
+
+    // route 테이블
+    connect(ui->routeTablePushButton, &QPushButton::clicked, this, [this]() {
+        RoutingTableWindow* routeTableWindow = new RoutingTableWindow(this);
+        routeTableWindow->setWindowModality(Qt::WindowModal);
+        QSize dlgSize = routeTableWindow->size();
+        QPoint center = this->geometry().center();
+        QPoint topLeft = center - QPoint(dlgSize.width()/2, dlgSize.height()/2);
+        routeTableWindow->move(topLeft);
+        routeTableWindow->show();
+    });
 }
+
+
+
+
 
 MainWindow::~MainWindow() {
     portWorker->stop(); // 타이머 멈춤
@@ -38,14 +56,15 @@ MainWindow::~MainWindow() {
     delete portThread;
     onPortThreadFinished();
 
-    routerThread->quit();
-    routerThread->wait();
-    delete routerWorker;
-    delete routerThread;
-    onRouterThreadFinished();
+    // routerThread->quit();
+    // routerThread->wait();
+    // delete routerWorker;
+    // delete routerThread;
+    // onRouterThreadFinished();
 
     delete Router::routerPtr;
     delete ui;
+
 }
 
 void MainWindow::startMyThread() {

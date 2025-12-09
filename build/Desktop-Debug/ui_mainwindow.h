@@ -111,8 +111,8 @@ public:
     QLabel *titleText;
     QLabel *subtitleText;
     QFrame *menuFrame;
-    QPushButton *searchTable;
-    QPushButton *routeTable;
+    QPushButton *arpTablePushButton;
+    QPushButton *routeTablePushButton;
     QFrame *frame;
     QTableWidget *routerTable;
     QLabel *interfaceText_2;
@@ -210,7 +210,7 @@ public:
         interfaceTable->verticalHeader()->setHighlightSections(true);
         portFrame = new QFrame(centralwidget);
         portFrame->setObjectName("portFrame");
-        portFrame->setGeometry(QRect(290, 120, 1051, 181));
+        portFrame->setGeometry(QRect(290, 140, 1051, 181));
         portFrame->setFrameShape(QFrame::Shape::StyledPanel);
         portFrame->setFrameShadow(QFrame::Shadow::Raised);
         portViewText = new QLabel(portFrame);
@@ -574,7 +574,7 @@ public:
         port30Text->setAlignment(Qt::AlignmentFlag::AlignCenter);
         loadStatusFrame = new QFrame(centralwidget);
         loadStatusFrame->setObjectName("loadStatusFrame");
-        loadStatusFrame->setGeometry(QRect(30, 120, 251, 181));
+        loadStatusFrame->setGeometry(QRect(30, 140, 251, 181));
         loadStatusFrame->setFrameShape(QFrame::Shape::StyledPanel);
         loadStatusFrame->setFrameShadow(QFrame::Shadow::Raised);
         loadStatusText = new QLabel(loadStatusFrame);
@@ -651,7 +651,7 @@ public:
         loadDangerText->setStyleSheet(QString::fromUtf8("color:rgb(94, 92, 100);"));
         titleFrame = new QFrame(centralwidget);
         titleFrame->setObjectName("titleFrame");
-        titleFrame->setGeometry(QRect(30, 10, 1311, 61));
+        titleFrame->setGeometry(QRect(30, 30, 1311, 61));
         titleFrame->setFrameShape(QFrame::Shape::StyledPanel);
         titleFrame->setFrameShadow(QFrame::Shadow::Raised);
         titleText = new QLabel(titleFrame);
@@ -675,32 +675,32 @@ public:
 ""));
         menuFrame = new QFrame(centralwidget);
         menuFrame->setObjectName("menuFrame");
-        menuFrame->setGeometry(QRect(30, 80, 1311, 31));
+        menuFrame->setGeometry(QRect(30, 100, 1311, 31));
         QFont font15;
         font15.setFamilies({QString::fromUtf8("Cantarell Extra Bold")});
         font15.setPointSize(10);
         menuFrame->setFont(font15);
         menuFrame->setFrameShape(QFrame::Shape::StyledPanel);
         menuFrame->setFrameShadow(QFrame::Shadow::Raised);
-        searchTable = new QPushButton(menuFrame);
-        searchTable->setObjectName("searchTable");
-        searchTable->setGeometry(QRect(120, 0, 101, 31));
+        arpTablePushButton = new QPushButton(menuFrame);
+        arpTablePushButton->setObjectName("arpTablePushButton");
+        arpTablePushButton->setGeometry(QRect(120, 0, 101, 31));
         QFont font16;
         font16.setFamilies({QString::fromUtf8("Cantarell")});
         font16.setPointSize(9);
         font16.setBold(true);
-        searchTable->setFont(font16);
-        searchTable->setStyleSheet(QString::fromUtf8("color:rgb(94, 92, 100);\n"
+        arpTablePushButton->setFont(font16);
+        arpTablePushButton->setStyleSheet(QString::fromUtf8("color:rgb(94, 92, 100);\n"
 "border:none;"));
-        routeTable = new QPushButton(menuFrame);
-        routeTable->setObjectName("routeTable");
-        routeTable->setGeometry(QRect(0, 0, 101, 31));
-        routeTable->setFont(font16);
-        routeTable->setStyleSheet(QString::fromUtf8("color:rgb(94, 92, 100);\n"
+        routeTablePushButton = new QPushButton(menuFrame);
+        routeTablePushButton->setObjectName("routeTablePushButton");
+        routeTablePushButton->setGeometry(QRect(10, 0, 101, 31));
+        routeTablePushButton->setFont(font16);
+        routeTablePushButton->setStyleSheet(QString::fromUtf8("color:rgb(94, 92, 100);\n"
 "border:none;"));
         frame = new QFrame(centralwidget);
         frame->setObjectName("frame");
-        frame->setGeometry(QRect(30, 320, 1311, 71));
+        frame->setGeometry(QRect(30, 330, 1311, 71));
         frame->setFont(font1);
         frame->setFrameShape(QFrame::Shape::StyledPanel);
         frame->setFrameShadow(QFrame::Shadow::Raised);
@@ -818,8 +818,8 @@ public:
         loadDangerText->setText(QString());
         titleText->setText(QCoreApplication::translate("MainWindow", "Network Monitoring System  ", nullptr));
         subtitleText->setText(QCoreApplication::translate("MainWindow", "Netman_labs", nullptr));
-        searchTable->setText(QCoreApplication::translate("MainWindow", " ARP \355\205\214\354\235\264\353\270\224", nullptr));
-        routeTable->setText(QCoreApplication::translate("MainWindow", "ROUTE \355\205\214\354\235\264\353\270\224", nullptr));
+        arpTablePushButton->setText(QCoreApplication::translate("MainWindow", " ARP \355\205\214\354\235\264\353\270\224", nullptr));
+        routeTablePushButton->setText(QCoreApplication::translate("MainWindow", "ROUTE \355\205\214\354\235\264\353\270\224", nullptr));
         QTableWidgetItem *___qtablewidgetitem8 = routerTable->horizontalHeaderItem(0);
         ___qtablewidgetitem8->setText(QCoreApplication::translate("MainWindow", "\354\236\245\353\271\204 \354\235\264\353\246\204", nullptr));
         QTableWidgetItem *___qtablewidgetitem9 = routerTable->horizontalHeaderItem(1);

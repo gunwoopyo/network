@@ -5,8 +5,10 @@
 
 class RouteTableEntry {
 public:
+    int inIndex;
     QString destIPAddress;
-
+    QString subnetMask;
+    QString nextHop;
 };
 
 

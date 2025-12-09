@@ -5,9 +5,13 @@
 #include "Router.h"
 #include "PortWorker.h"
 
-#include "arptablewindow.h"
 #include "registerdevicewindow.h"
-#include "routetablewindow.h"
+#include "arptablewindow.h"
+#include "routingtablewindow.h"
+
+
+
+
 
 
 QT_BEGIN_NAMESPACE

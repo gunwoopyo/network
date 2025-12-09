@@ -1,101 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>TableWindow</class>
- <widget class="QMainWindow" name="TableWindow">
+ <class>ArpTableWindow</class>
+ <widget class="QMainWindow" name="ArpTableWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1071</width>
-    <height>716</height>
+    <width>934</width>
+    <height>583</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>테이블 조회</string>
+   <string>ARP테이블</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QFrame" name="titleFrame">
+   <widget class="QFrame" name="interfaceFrame">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>150</y>
-      <width>971</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Shape::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Shadow::Raised</enum>
-    </property>
-    <widget class="QPushButton" name="searchPushButton">
-     <property name="geometry">
-      <rect>
-       <x>790</x>
-       <y>20</y>
-       <width>71</width>
-       <height>26</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>조회</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="searchTotalPushButton">
-     <property name="geometry">
-      <rect>
-       <x>870</x>
-       <y>20</y>
-       <width>71</width>
-       <height>26</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>전체조회</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="portNumberText">
-     <property name="geometry">
-      <rect>
-       <x>50</x>
-       <y>20</y>
-       <width>66</width>
-       <height>18</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string> 포트 번호</string>
-     </property>
-    </widget>
-    <widget class="QComboBox" name="portNumberComboBox">
-     <property name="geometry">
-      <rect>
-       <x>120</x>
-       <y>20</y>
-       <width>101</width>
-       <height>26</height>
-      </rect>
-     </property>
-     <item>
-      <property name="text">
-       <string/>
-      </property>
-     </item>
-    </widget>
-   </widget>
-   <widget class="QFrame" name="arpFrame">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>230</y>
-      <width>971</width>
-      <height>421</height>
+      <x>70</x>
+      <y>190</y>
+      <width>791</width>
+      <height>311</height>
      </rect>
     </property>
     <property name="font">
@@ -110,12 +35,12 @@
     <property name="frameShadow">
      <enum>QFrame::Shadow::Raised</enum>
     </property>
-    <widget class="QLabel" name="arpTableText">
+    <widget class="QLabel" name="interfaceText">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>0</y>
-       <width>101</width>
+       <width>71</width>
        <height>21</height>
       </rect>
      </property>
@@ -138,8 +63,8 @@
       <rect>
        <x>0</x>
        <y>20</y>
-       <width>971</width>
-       <height>401</height>
+       <width>791</width>
+       <height>291</height>
       </rect>
      </property>
      <property name="font">
@@ -151,9 +76,6 @@
      </property>
      <property name="styleSheet">
       <string notr="true">color:rgb(94, 92, 100);</string>
-     </property>
-     <property name="verticalScrollBarPolicy">
-      <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
      </property>
      <property name="horizontalScrollBarPolicy">
       <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
@@ -168,23 +90,23 @@
       <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
      </property>
      <attribute name="horizontalHeaderDefaultSectionSize">
-      <number>242</number>
+      <number>198</number>
      </attribute>
      <attribute name="verticalHeaderVisible">
       <bool>false</bool>
      </attribute>
      <attribute name="verticalHeaderMinimumSectionSize">
-      <number>28</number>
+      <number>25</number>
      </attribute>
      <attribute name="verticalHeaderDefaultSectionSize">
-      <number>30</number>
+      <number>25</number>
      </attribute>
      <attribute name="verticalHeaderHighlightSections">
       <bool>true</bool>
      </attribute>
      <column>
       <property name="text">
-       <string> 포트 번호</string>
+       <string>포트 번호</string>
       </property>
       <property name="font">
        <font>
@@ -224,28 +146,153 @@
      </column>
     </widget>
    </widget>
-   <widget class="QLabel" name="arpText">
+   <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>120</y>
-      <width>111</width>
-      <height>21</height>
+      <x>70</x>
+      <y>130</y>
+      <width>791</width>
+      <height>41</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <family>Cantarell Extra Bold</family>
-      <pointsize>11</pointsize>
-      <bold>true</bold>
-     </font>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
     </property>
-    <property name="styleSheet">
-     <string notr="true">color:rgb(94, 92, 100);</string>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
     </property>
-    <property name="text">
-     <string>ARP 테이블 조회</string>
+    <widget class="QComboBox" name="portNumberComboBox">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>10</y>
+       <width>79</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+    </widget>
+    <widget class="QPushButton" name="searchPushButton">
+     <property name="geometry">
+      <rect>
+       <x>640</x>
+       <y>10</y>
+       <width>61</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>조회</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="searchTotalPushButton">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>10</y>
+       <width>61</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>전체조회</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>10</y>
+       <width>61</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>포트번호</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="titleFrame">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>40</y>
+      <width>791</width>
+      <height>71</height>
+     </rect>
     </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QLabel" name="titleText">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>0</y>
+       <width>331</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Cantarell Extra Bold</family>
+       <pointsize>15</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:rgb(94, 92, 100);</string>
+     </property>
+     <property name="text">
+      <string>Network Monitoring System  </string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="subtitleText">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>151</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Cantarell</family>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:rgb(94, 92, 100);
+</string>
+     </property>
+     <property name="text">
+      <string>Netman_labs</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -253,7 +300,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1071</width>
+     <width>934</width>
      <height>23</height>
     </rect>
    </property>

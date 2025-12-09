@@ -216,7 +216,7 @@
     <property name="geometry">
      <rect>
       <x>290</x>
-      <y>120</y>
+      <y>140</y>
       <width>1051</width>
       <height>181</height>
      </rect>
@@ -1603,7 +1603,7 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>120</y>
+      <y>140</y>
       <width>251</width>
       <height>181</height>
      </rect>
@@ -1886,7 +1886,7 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>10</y>
+      <y>30</y>
       <width>1311</width>
       <height>61</height>
      </rect>
@@ -1949,7 +1949,7 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>80</y>
+      <y>100</y>
       <width>1311</width>
       <height>31</height>
      </rect>
@@ -1966,7 +1966,7 @@
     <property name="frameShadow">
      <enum>QFrame::Shadow::Raised</enum>
     </property>
-    <widget class="QPushButton" name="searchTable">
+    <widget class="QPushButton" name="arpTablePushButton">
      <property name="geometry">
       <rect>
        <x>120</x>
@@ -1990,10 +1990,10 @@ border:none;</string>
       <string> ARP 테이블</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="routeTable">
+    <widget class="QPushButton" name="routeTablePushButton">
      <property name="geometry">
       <rect>
-       <x>0</x>
+       <x>10</x>
        <y>0</y>
        <width>101</width>
        <height>31</height>
@@ -2019,7 +2019,7 @@ border:none;</string>
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>320</y>
+      <y>330</y>
       <width>1311</width>
       <height>71</height>
      </rect>

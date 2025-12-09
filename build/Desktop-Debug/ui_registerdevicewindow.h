@@ -45,12 +45,12 @@ public:
         if (RegisterDeviceWindow->objectName().isEmpty())
             RegisterDeviceWindow->setObjectName("RegisterDeviceWindow");
         RegisterDeviceWindow->setEnabled(true);
-        RegisterDeviceWindow->resize(640, 678);
+        RegisterDeviceWindow->resize(644, 678);
         centralwidget = new QWidget(RegisterDeviceWindow);
         centralwidget->setObjectName("centralwidget");
         registDeviceText = new QPushButton(centralwidget);
         registDeviceText->setObjectName("registDeviceText");
-        registDeviceText->setGeometry(QRect(30, 50, 121, 31));
+        registDeviceText->setGeometry(QRect(40, 30, 121, 31));
         QFont font;
         font.setFamilies({QString::fromUtf8("Cantarell")});
         font.setPointSize(12);
@@ -60,12 +60,12 @@ public:
 "border:none;"));
         frame = new QFrame(centralwidget);
         frame->setObjectName("frame");
-        frame->setGeometry(QRect(30, 80, 581, 91));
+        frame->setGeometry(QRect(40, 60, 561, 91));
         frame->setFrameShape(QFrame::Shape::StyledPanel);
         frame->setFrameShadow(QFrame::Shadow::Raised);
         registIPAddressText = new QPushButton(frame);
         registIPAddressText->setObjectName("registIPAddressText");
-        registIPAddressText->setGeometry(QRect(40, 30, 91, 41));
+        registIPAddressText->setGeometry(QRect(20, 30, 91, 41));
         QFont font1;
         font1.setFamilies({QString::fromUtf8("Cantarell Light")});
         font1.setPointSize(10);
@@ -75,25 +75,25 @@ public:
 "border:none;"));
         registIPAddress = new QLineEdit(frame);
         registIPAddress->setObjectName("registIPAddress");
-        registIPAddress->setGeometry(QRect(130, 30, 111, 31));
+        registIPAddress->setGeometry(QRect(110, 30, 111, 31));
         registCommunityText = new QPushButton(frame);
         registCommunityText->setObjectName("registCommunityText");
-        registCommunityText->setGeometry(QRect(250, 30, 91, 41));
+        registCommunityText->setGeometry(QRect(240, 30, 91, 41));
         registCommunityText->setFont(font1);
         registCommunityText->setStyleSheet(QString::fromUtf8("color:rgb(94, 92, 100);\n"
 "border:none;"));
         registCommunity = new QLineEdit(frame);
         registCommunity->setObjectName("registCommunity");
-        registCommunity->setGeometry(QRect(340, 30, 101, 31));
+        registCommunity->setGeometry(QRect(330, 30, 101, 31));
         registPushButton = new QPushButton(frame);
         registPushButton->setObjectName("registPushButton");
-        registPushButton->setGeometry(QRect(490, 20, 71, 21));
+        registPushButton->setGeometry(QRect(470, 20, 71, 21));
         QFont font2;
         font2.setPointSize(10);
         registPushButton->setFont(font2);
         deletePushButton = new QPushButton(frame);
         deletePushButton->setObjectName("deletePushButton");
-        deletePushButton->setGeometry(QRect(490, 50, 71, 21));
+        deletePushButton->setGeometry(QRect(470, 50, 71, 21));
         deletePushButton->setFont(font2);
         routerListTable = new QTableWidget(centralwidget);
         if (routerListTable->columnCount() < 2)
@@ -107,7 +107,7 @@ public:
         __qtablewidgetitem1->setFont(font3);
         routerListTable->setHorizontalHeaderItem(1, __qtablewidgetitem1);
         routerListTable->setObjectName("routerListTable");
-        routerListTable->setGeometry(QRect(120, 220, 391, 401));
+        routerListTable->setGeometry(QRect(110, 220, 391, 401));
         routerListTable->setFont(font3);
         routerListTable->setVerticalScrollBarPolicy(Qt::ScrollBarPolicy::ScrollBarAlwaysOff);
         routerListTable->setHorizontalScrollBarPolicy(Qt::ScrollBarPolicy::ScrollBarAlwaysOff);
@@ -118,12 +118,12 @@ public:
         routerListTable->verticalHeader()->setVisible(false);
         startPushButton = new QPushButton(centralwidget);
         startPushButton->setObjectName("startPushButton");
-        startPushButton->setGeometry(QRect(420, 190, 91, 26));
+        startPushButton->setGeometry(QRect(410, 190, 91, 26));
         startPushButton->setFont(font2);
         RegisterDeviceWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(RegisterDeviceWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 640, 23));
+        menubar->setGeometry(QRect(0, 0, 644, 23));
         RegisterDeviceWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(RegisterDeviceWindow);
         statusbar->setObjectName("statusbar");

@@ -31,14 +31,14 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
-struct qt_meta_tag_ZN16RouteTableWindowE_t {};
+struct qt_meta_tag_ZN16routetablewindowE_t {};
 } // unnamed namespace
 
-template <> constexpr inline auto RouteTableWindow::qt_create_metaobjectdata<qt_meta_tag_ZN16RouteTableWindowE_t>()
+template <> constexpr inline auto routetablewindow::qt_create_metaobjectdata<qt_meta_tag_ZN16routetablewindowE_t>()
 {
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
-        "RouteTableWindow",
+        "routetablewindow",
         "onRouteTableThreadStarted",
         "",
         "onRouteTableThreadFinished",
@@ -61,22 +61,22 @@ template <> constexpr inline auto RouteTableWindow::qt_create_metaobjectdata<qt_
     };
     QtMocHelpers::UintData qt_enums {
     };
-    return QtMocHelpers::metaObjectData<RouteTableWindow, qt_meta_tag_ZN16RouteTableWindowE_t>(QMC::MetaObjectFlag{}, qt_stringData,
+    return QtMocHelpers::metaObjectData<routetablewindow, qt_meta_tag_ZN16routetablewindowE_t>(QMC::MetaObjectFlag{}, qt_stringData,
             qt_methods, qt_properties, qt_enums);
 }
-Q_CONSTINIT const QMetaObject RouteTableWindow::staticMetaObject = { {
+Q_CONSTINIT const QMetaObject routetablewindow::staticMetaObject = { {
     QMetaObject::SuperData::link<QMainWindow::staticMetaObject>(),
-    qt_staticMetaObjectStaticContent<qt_meta_tag_ZN16RouteTableWindowE_t>.stringdata,
-    qt_staticMetaObjectStaticContent<qt_meta_tag_ZN16RouteTableWindowE_t>.data,
+    qt_staticMetaObjectStaticContent<qt_meta_tag_ZN16routetablewindowE_t>.stringdata,
+    qt_staticMetaObjectStaticContent<qt_meta_tag_ZN16routetablewindowE_t>.data,
     qt_static_metacall,
     nullptr,
-    qt_staticMetaObjectRelocatingContent<qt_meta_tag_ZN16RouteTableWindowE_t>.metaTypes,
+    qt_staticMetaObjectRelocatingContent<qt_meta_tag_ZN16routetablewindowE_t>.metaTypes,
     nullptr
 } };
 
-void RouteTableWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void routetablewindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    auto *_t = static_cast<RouteTableWindow *>(_o);
+    auto *_t = static_cast<routetablewindow *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->onRouteTableThreadStarted(); break;
@@ -87,20 +87,20 @@ void RouteTableWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
     }
 }
 
-const QMetaObject *RouteTableWindow::metaObject() const
+const QMetaObject *routetablewindow::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *RouteTableWindow::qt_metacast(const char *_clname)
+void *routetablewindow::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_staticMetaObjectStaticContent<qt_meta_tag_ZN16RouteTableWindowE_t>.strings))
+    if (!strcmp(_clname, qt_staticMetaObjectStaticContent<qt_meta_tag_ZN16routetablewindowE_t>.strings))
         return static_cast<void*>(this);
     return QMainWindow::qt_metacast(_clname);
 }
 
-int RouteTableWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int routetablewindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QMainWindow::qt_metacall(_c, _id, _a);
     if (_id < 0)

@@ -6,9 +6,9 @@
 #include "RouteTable.h"
 
 
-RouteTableWindow::RouteTableWindow(QWidget *parent)
+routetablewindow::routetablewindow(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::RouteTableWindow)
+    , ui(new Ui::routetablewindow)
 {
     ui->setupUi(this);
 
@@ -16,33 +16,33 @@ RouteTableWindow::RouteTableWindow(QWidget *parent)
     routeTableThread = new QThread();
     routeTableWorker->moveToThread(routeTableThread);
     routeTableThread->start();
-    QObject::connect(routeTableThread, &QThread::started, this, &RouteTableWindow::onRouteTableThreadStarted);
+    QObject::connect(routeTableThread, &QThread::started, this, &routetablewindow::onRouteTableThreadStarted);
     QObject::connect(routeTableThread, &QThread::started, routeTableWorker, &RouteTableWorker::routeTableProcess);
-    QObject::connect(routeTableWorker, &RouteTableWorker::routeTableProgress, this, &RouteTableWindow::showRouteTableInfo);
+    QObject::connect(routeTableWorker, &RouteTableWorker::routeTableProgress, this, &routetablewindow::showRouteTableInfo);
     QObject::connect(routeTableWorker, &RouteTableWorker::finished, routeTableThread, &QThread::quit);
     QObject::connect(routeTableThread, &QThread::finished, routeTableWorker, &QObject::deleteLater);
     QObject::connect(routeTableThread, &QThread::finished, routeTableThread, &QObject::deleteLater);
-    QObject::connect(routeTableWorker, &RouteTableWorker::finished, this, &RouteTableWindow::onRouteTableThreadFinished);
+    QObject::connect(routeTableWorker, &RouteTableWorker::finished, this, &routetablewindow::onRouteTableThreadFinished);
 }
 
-void RouteTableWindow::onRouteTableThreadStarted() {
+void routetablewindow::onRouteTableThreadStarted() {
     qDebug() << "라우터 테이블 스레드 시작";
 }
 
-void RouteTableWindow::onRouteTableThreadFinished() {
+void routetablewindow::onRouteTableThreadFinished() {
     qDebug() << "라우터 테이블 스레드 종료";
 }
 
 
 
-RouteTableWindow::~RouteTableWindow()
+routetablewindow::~routetablewindow()
 {
     delete ui;
 }
 
 
 
-void RouteTableWindow::showRouteTableInfo(RouteTable* table) {
+void routetablewindow::showRouteTableInfo(RouteTable* table) {
 
 
 

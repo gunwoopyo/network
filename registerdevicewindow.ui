@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
+    <width>644</width>
     <height>678</height>
    </rect>
   </property>
@@ -20,8 +20,8 @@
    <widget class="QPushButton" name="registDeviceText">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>50</y>
+      <x>40</x>
+      <y>30</y>
       <width>121</width>
       <height>31</height>
      </rect>
@@ -44,9 +44,9 @@ border:none;</string>
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>80</y>
-      <width>581</width>
+      <x>40</x>
+      <y>60</y>
+      <width>561</width>
       <height>91</height>
      </rect>
     </property>
@@ -59,7 +59,7 @@ border:none;</string>
     <widget class="QPushButton" name="registIPAddressText">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>20</x>
        <y>30</y>
        <width>91</width>
        <height>41</height>
@@ -83,7 +83,7 @@ border:none;</string>
     <widget class="QLineEdit" name="registIPAddress">
      <property name="geometry">
       <rect>
-       <x>130</x>
+       <x>110</x>
        <y>30</y>
        <width>111</width>
        <height>31</height>
@@ -93,7 +93,7 @@ border:none;</string>
     <widget class="QPushButton" name="registCommunityText">
      <property name="geometry">
       <rect>
-       <x>250</x>
+       <x>240</x>
        <y>30</y>
        <width>91</width>
        <height>41</height>
@@ -117,7 +117,7 @@ border:none;</string>
     <widget class="QLineEdit" name="registCommunity">
      <property name="geometry">
       <rect>
-       <x>340</x>
+       <x>330</x>
        <y>30</y>
        <width>101</width>
        <height>31</height>
@@ -127,7 +127,7 @@ border:none;</string>
     <widget class="QPushButton" name="registPushButton">
      <property name="geometry">
       <rect>
-       <x>490</x>
+       <x>470</x>
        <y>20</y>
        <width>71</width>
        <height>21</height>
@@ -145,7 +145,7 @@ border:none;</string>
     <widget class="QPushButton" name="deletePushButton">
      <property name="geometry">
       <rect>
-       <x>490</x>
+       <x>470</x>
        <y>50</y>
        <width>71</width>
        <height>21</height>
@@ -164,7 +164,7 @@ border:none;</string>
    <widget class="QTableWidget" name="routerListTable">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>110</x>
       <y>220</y>
       <width>391</width>
       <height>401</height>
@@ -220,7 +220,7 @@ border:none;</string>
    <widget class="QPushButton" name="startPushButton">
     <property name="geometry">
      <rect>
-      <x>420</x>
+      <x>410</x>
       <y>190</y>
       <width>91</width>
       <height>26</height>
@@ -241,7 +241,7 @@ border:none;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>640</width>
+     <width>644</width>
      <height>23</height>
     </rect>
    </property>

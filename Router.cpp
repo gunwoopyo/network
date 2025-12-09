@@ -1,4 +1,4 @@
-#include "RouteWorker.h"
+#include "RouterWorker.h"
 #include "Router.h"
 
 #include <QDebug>
@@ -66,7 +66,6 @@ void Router::fetchRouterInfo() {
 
 
 void Router::createPort() {
-    qDebug() <<"###";
     snmp_session session;
     snmp_sess_init(&session);
 

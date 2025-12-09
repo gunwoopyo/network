@@ -10,22 +10,22 @@ class RouteTable;
 
 
 namespace Ui {
-class RouteTableWindow;
+class routetablewindow;
 }
 
-class RouteTableWindow : public QMainWindow
+class routetablewindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit RouteTableWindow(QWidget *parent = nullptr);
-    ~RouteTableWindow();
+    explicit routetablewindow(QWidget *parent = nullptr);
+    ~routetablewindow();
 
 private:
     RouteTableWorker* routeTableWorker = nullptr;
     QThread* routeTableThread = nullptr;
 
-    Ui::RouteTableWindow *ui;
+    Ui::routetablewindow *ui;
 
 public slots:
     void onRouteTableThreadStarted();

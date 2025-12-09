@@ -18,13 +18,13 @@ SOURCES += \
     PortWorker.cpp \
     RouteTable.cpp \
     RouteTableWorker.cpp \
-    RouteWorker.cpp \
     Router.cpp \
+    RouterWorker.cpp \
     arptablewindow.cpp \
     main.cpp \
     mainwindow.cpp \
     registerdevicewindow.cpp \
-    routetablewindow.cpp
+    routingtablewindow.cpp
 
 HEADERS += \
     ArpTable.h \
@@ -35,19 +35,19 @@ HEADERS += \
     RouteTable.h \
     RouteTableEntry.h \
     RouteTableWorker.h \
-    RouteWorker.h \
     Router.h \
+    RouterWorker.h \
     Traffic.h \
     arptablewindow.h \
     mainwindow.h \
     registerdevicewindow.h \
-    routetablewindow.h
+    routingtablewindow.h
 
 FORMS += \
     arptablewindow.ui \
     mainwindow.ui \
     registerdevicewindow.ui \
-    routetablewindow.ui
+    routingtablewindow.ui
 
 # Net-SNMP 헤더 경로
 INCLUDEPATH += /usr/include/net-snmp
