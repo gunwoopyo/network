@@ -1,7 +1,6 @@
 #ifndef ARPTABLEWORKER_H
 #define ARPTABLEWORKER_H
 
-
 #include <QObject>
 
 class ArpTable;

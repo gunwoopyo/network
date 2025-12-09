@@ -2,21 +2,35 @@
 #define ROUTETABLEWINDOW_H
 
 #include <QMainWindow>
+#include <QThread>
+
+class RouteTableWorker;
+class RouteTable;
+
+
 
 namespace Ui {
-class routetablewindow;
+class RouteTableWindow;
 }
 
-class routetablewindow : public QMainWindow
+class RouteTableWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit routetablewindow(QWidget *parent = nullptr);
-    ~routetablewindow();
+    explicit RouteTableWindow(QWidget *parent = nullptr);
+    ~RouteTableWindow();
 
 private:
-    Ui::routetablewindow *ui;
+    RouteTableWorker* routeTableWorker = nullptr;
+    QThread* routeTableThread = nullptr;
+
+    Ui::RouteTableWindow *ui;
+
+public slots:
+    void onRouteTableThreadStarted();
+    void onRouteTableThreadFinished();
+    void showRouteTableInfo(RouteTable* table);
 };
 
 #endif // ROUTETABLEWINDOW_H

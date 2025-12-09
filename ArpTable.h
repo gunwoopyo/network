@@ -7,7 +7,6 @@
 
 class ArpTable {
 public:
-    QString selectedButton;
     QVector<ArpTableEntry> arpTable;
 
     void fetchArpTableInfo();

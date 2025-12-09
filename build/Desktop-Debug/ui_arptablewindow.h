@@ -24,7 +24,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_TableWindow
+class Ui_arptablewindow
 {
 public:
     QWidget *centralwidget;
@@ -44,12 +44,12 @@ public:
     {
         if (TableWindow->objectName().isEmpty())
             TableWindow->setObjectName("TableWindow");
-        TableWindow->resize(1071, 753);
+        TableWindow->resize(1071, 716);
         centralwidget = new QWidget(TableWindow);
         centralwidget->setObjectName("centralwidget");
         titleFrame = new QFrame(centralwidget);
         titleFrame->setObjectName("titleFrame");
-        titleFrame->setGeometry(QRect(50, 90, 971, 61));
+        titleFrame->setGeometry(QRect(50, 150, 971, 61));
         titleFrame->setFrameShape(QFrame::Shape::StyledPanel);
         titleFrame->setFrameShadow(QFrame::Shadow::Raised);
         searchPushButton = new QPushButton(titleFrame);
@@ -70,7 +70,7 @@ public:
         portNumberComboBox->setGeometry(QRect(120, 20, 101, 26));
         arpFrame = new QFrame(centralwidget);
         arpFrame->setObjectName("arpFrame");
-        arpFrame->setGeometry(QRect(50, 190, 971, 501));
+        arpFrame->setGeometry(QRect(50, 230, 971, 421));
         QFont font1;
         font1.setFamilies({QString::fromUtf8("Cantarell")});
         font1.setPointSize(9);
@@ -104,7 +104,7 @@ public:
         __qtablewidgetitem3->setFont(font3);
         arpTable->setHorizontalHeaderItem(3, __qtablewidgetitem3);
         arpTable->setObjectName("arpTable");
-        arpTable->setGeometry(QRect(0, 20, 971, 481));
+        arpTable->setGeometry(QRect(0, 20, 971, 401));
         QFont font4;
         font4.setFamilies({QString::fromUtf8("Cantarell")});
         font4.setPointSize(9);
@@ -123,10 +123,10 @@ public:
         arpTable->verticalHeader()->setHighlightSections(true);
         arpText = new QLabel(centralwidget);
         arpText->setObjectName("arpText");
-        arpText->setGeometry(QRect(50, 60, 131, 21));
+        arpText->setGeometry(QRect(50, 120, 111, 21));
         QFont font5;
         font5.setFamilies({QString::fromUtf8("Cantarell Extra Bold")});
-        font5.setPointSize(13);
+        font5.setPointSize(11);
         font5.setBold(true);
         arpText->setFont(font5);
         arpText->setStyleSheet(QString::fromUtf8("color:rgb(94, 92, 100);"));

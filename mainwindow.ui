@@ -2011,7 +2011,7 @@ border:none;</string>
 border:none;</string>
      </property>
      <property name="text">
-      <string> 라우팅 테이블</string>
+      <string>ROUTE 테이블</string>
      </property>
     </widget>
    </widget>

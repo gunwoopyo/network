@@ -10,9 +10,9 @@ RegisterDeviceWindow::RegisterDeviceWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::RegisterDeviceWindow) {
     ui->setupUi(this);
-
     routerListTable();
 }
+
 
 RegisterDeviceWindow::~RegisterDeviceWindow() {
     delete ui;

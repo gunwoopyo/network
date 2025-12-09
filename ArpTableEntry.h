@@ -1,7 +1,6 @@
 #ifndef ARPTABLEENTRY_H
 #define ARPTABLEENTRY_H
 
-
 #include <QString>
 
 class ArpTableEntry {

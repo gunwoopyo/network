@@ -7,6 +7,7 @@
 
 #include "arptablewindow.h"
 #include "registerdevicewindow.h"
+#include "routetablewindow.h"
 
 
 QT_BEGIN_NAMESPACE

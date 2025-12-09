@@ -17,9 +17,7 @@ public:
 
 public slots:
     void on_startPushButton_clicked();
-
     void on_deletePushButton_clicked();
-
     void on_registPushButton_clicked();
     void routerListTable();
 private:

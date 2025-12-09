@@ -819,7 +819,7 @@ public:
         titleText->setText(QCoreApplication::translate("MainWindow", "Network Monitoring System  ", nullptr));
         subtitleText->setText(QCoreApplication::translate("MainWindow", "Netman_labs", nullptr));
         searchTable->setText(QCoreApplication::translate("MainWindow", " ARP \355\205\214\354\235\264\353\270\224", nullptr));
-        routeTable->setText(QCoreApplication::translate("MainWindow", " \353\235\274\354\232\260\355\214\205 \355\205\214\354\235\264\353\270\224", nullptr));
+        routeTable->setText(QCoreApplication::translate("MainWindow", "ROUTE \355\205\214\354\235\264\353\270\224", nullptr));
         QTableWidgetItem *___qtablewidgetitem8 = routerTable->horizontalHeaderItem(0);
         ___qtablewidgetitem8->setText(QCoreApplication::translate("MainWindow", "\354\236\245\353\271\204 \354\235\264\353\246\204", nullptr));
         QTableWidgetItem *___qtablewidgetitem9 = routerTable->horizontalHeaderItem(1);

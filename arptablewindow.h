@@ -4,26 +4,29 @@
 #include <QMainWindow>
 #include <QThread>
 
-namespace Ui {
-class TableWindow;
-}
 
 class ArpTableWorker;
 class ArpTable;
 
-class ArpTableWindow : public QMainWindow
+
+namespace Ui {
+class arptablewindow;
+}
+
+
+class arptablewindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit ArpTableWindow(QWidget *parent = nullptr);
-    ~ArpTableWindow();
+    explicit arptablewindow(QWidget *parent = nullptr);
+    ~arptablewindow();
 
 private:
     ArpTableWorker* arpTableWorker = nullptr;
     QThread* arpTableThread = nullptr;
 
-    Ui::TableWindow *ui;
+    Ui::arptablewindow *ui;
 
 public slots:
     void on_searchPushButton_clicked();

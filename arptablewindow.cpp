@@ -2,9 +2,10 @@
 #include "ui_arptablewindow.h"
 #include "ArpTableWorker.h"
 #include "ArpTable.h"
-ArpTableWindow::ArpTableWindow(QWidget *parent)
+
+arptablewindow::arptablewindow(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::TableWindow)
+    , ui(new Ui::arptablewindow)
 {
     ui->setupUi(this);
 
@@ -12,17 +13,17 @@ ArpTableWindow::ArpTableWindow(QWidget *parent)
     arpTableThread = new QThread();
     arpTableWorker->moveToThread(arpTableThread);
     arpTableThread->start();
-    QObject::connect(arpTableThread, &QThread::started, this, &ArpTableWindow::onArpTableThreadStarted);
+    QObject::connect(arpTableThread, &QThread::started, this, &arptablewindow::onArpTableThreadStarted);
     QObject::connect(arpTableThread, &QThread::started, arpTableWorker, &ArpTableWorker::arpTableProcess);
-    QObject::connect(arpTableWorker, &ArpTableWorker::arpTableProgress, this, &ArpTableWindow::showArpTableInfo);
+    QObject::connect(arpTableWorker, &ArpTableWorker::arpTableProgress, this, &arptablewindow::showArpTableInfo);
     QObject::connect(arpTableWorker, &ArpTableWorker::finished, arpTableThread, &QThread::quit);
     QObject::connect(arpTableThread, &QThread::finished, arpTableWorker, &QObject::deleteLater);
     QObject::connect(arpTableThread, &QThread::finished, arpTableThread, &QObject::deleteLater);
-    QObject::connect(arpTableWorker, &ArpTableWorker::finished, this, &ArpTableWindow::onArpTableThreadFinished);
-
+    QObject::connect(arpTableWorker, &ArpTableWorker::finished, this, &arptablewindow::onArpTableThreadFinished);
 }
 
-ArpTableWindow::~ArpTableWindow()
+
+arptablewindow::~arptablewindow()
 {
 
     delete arpTableWorker;
@@ -30,56 +31,56 @@ ArpTableWindow::~ArpTableWindow()
 
     // arpTableThread->quit();
     // arpTableThread->wait();
-    //onArpTableThreadFinished();
+    // onArpTableThreadFinished();
 
     delete ui;
 }
 
 // 전체 조회
-void ArpTableWindow::on_searchTotalPushButton_clicked() {
+void arptablewindow::on_searchTotalPushButton_clicked() {
     //ui->portNumberComboBox->clear();
     arpTableWorker = new ArpTableWorker();
     arpTableThread = new QThread();
     arpTableWorker->moveToThread(arpTableThread);
     arpTableThread->start();
-    QObject::connect(arpTableThread, &QThread::started, this, &ArpTableWindow::onArpTableThreadStarted);
+    QObject::connect(arpTableThread, &QThread::started, this, &arptablewindow::onArpTableThreadStarted);
     QObject::connect(arpTableThread, &QThread::started, arpTableWorker, &ArpTableWorker::arpTableProcess);
-    QObject::connect(arpTableWorker, &ArpTableWorker::arpTableProgress, this, &ArpTableWindow::showArpTableInfo);
+    QObject::connect(arpTableWorker, &ArpTableWorker::arpTableProgress, this, &arptablewindow::showArpTableInfo);
     QObject::connect(arpTableWorker, &ArpTableWorker::finished, arpTableThread, &QThread::quit);
     QObject::connect(arpTableThread, &QThread::finished, arpTableWorker, &QObject::deleteLater);
     QObject::connect(arpTableThread, &QThread::finished, arpTableThread, &QObject::deleteLater);
-    QObject::connect(arpTableWorker, &ArpTableWorker::finished, this, &ArpTableWindow::onArpTableThreadFinished);
+    QObject::connect(arpTableWorker, &ArpTableWorker::finished, this, &arptablewindow::onArpTableThreadFinished);
 
 }
 
 
 // 조회
-void ArpTableWindow::on_searchPushButton_clicked() {
+void arptablewindow::on_searchPushButton_clicked() {
 
     //ui->portNumberComboBox->clear();
     arpTableWorker = new ArpTableWorker();
     arpTableThread = new QThread();
     arpTableWorker->moveToThread(arpTableThread);
     arpTableThread->start();
-    QObject::connect(arpTableThread, &QThread::started, this, &ArpTableWindow::onArpTableThreadStarted);
+    QObject::connect(arpTableThread, &QThread::started, this, &arptablewindow::onArpTableThreadStarted);
     QObject::connect(arpTableThread, &QThread::started, arpTableWorker, &ArpTableWorker::arpTableProcess);
-    QObject::connect(arpTableWorker, &ArpTableWorker::arpTableProgress, this, &ArpTableWindow::showArpTableInfo);
+    QObject::connect(arpTableWorker, &ArpTableWorker::arpTableProgress, this, &arptablewindow::showArpTableInfo);
     QObject::connect(arpTableWorker, &ArpTableWorker::finished, arpTableThread, &QThread::quit);
     QObject::connect(arpTableThread, &QThread::finished, arpTableWorker, &QObject::deleteLater);
     QObject::connect(arpTableThread, &QThread::finished, arpTableThread, &QObject::deleteLater);
-    QObject::connect(arpTableWorker, &ArpTableWorker::finished, this, &ArpTableWindow::onArpTableThreadFinished);
+    QObject::connect(arpTableWorker, &ArpTableWorker::finished, this, &arptablewindow::onArpTableThreadFinished);
 }
 
-void ArpTableWindow::onArpTableThreadStarted() {
+void arptablewindow::onArpTableThreadStarted() {
     qDebug() << "ARP 테이블 스레드 시작";
 }
 
-void ArpTableWindow::onArpTableThreadFinished() {
+void arptablewindow::onArpTableThreadFinished() {
     qDebug() << "ARP 테이블 스레드 종료";
 }
 
 
-void ArpTableWindow::showArpTableInfo(ArpTable* table) {
+void arptablewindow::showArpTableInfo(ArpTable* table) {
     ui->arpTable->setRowCount(0);
     QString portNumberText = ui->portNumberComboBox->currentText();
 

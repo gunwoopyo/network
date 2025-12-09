@@ -7,25 +7,20 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>411</height>
+    <height>492</height>
    </rect>
-  </property>
-  <property name="font">
-   <font>
-    <pointsize>11</pointsize>
-   </font>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QFrame" name="routeFrame">
+   <widget class="QFrame" name="routeeFrame">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>100</y>
-      <width>741</width>
-      <height>241</height>
+      <x>50</x>
+      <y>110</y>
+      <width>691</width>
+      <height>301</height>
      </rect>
     </property>
     <property name="font">
@@ -40,13 +35,36 @@
     <property name="frameShadow">
      <enum>QFrame::Shadow::Raised</enum>
     </property>
-    <widget class="QTableWidget" name="routeTable">
+    <widget class="QLabel" name="routeTableText">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>0</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Cantarell Extra Bold</family>
+       <pointsize>9</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:rgb(94, 92, 100);</string>
+     </property>
+     <property name="text">
+      <string>라우트 테이블</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="routeeTable">
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>30</y>
-       <width>741</width>
-       <height>221</height>
+       <y>20</y>
+       <width>691</width>
+       <height>281</height>
       </rect>
      </property>
      <property name="font">
@@ -75,7 +93,7 @@
       <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
      </property>
      <attribute name="horizontalHeaderDefaultSectionSize">
-      <number>145</number>
+      <number>170</number>
      </attribute>
      <attribute name="verticalHeaderVisible">
       <bool>false</bool>
@@ -91,7 +109,7 @@
      </attribute>
      <column>
       <property name="text">
-       <string>목적지 IP 주소</string>
+       <string> 포트 번호</string>
       </property>
       <property name="font">
        <font>
@@ -101,7 +119,7 @@
      </column>
      <column>
       <property name="text">
-       <string>라우팅 인터페이스 인덱스</string>
+       <string>IP Address</string>
       </property>
       <property name="font">
        <font>
@@ -111,7 +129,7 @@
      </column>
      <column>
       <property name="text">
-       <string>다음 홉 IP</string>
+       <string>MAC 주소</string>
       </property>
       <property name="font">
        <font>
@@ -121,7 +139,7 @@
      </column>
      <column>
       <property name="text">
-       <string>라우팅 타입</string>
+       <string>타입</string>
       </property>
       <property name="font">
        <font>
@@ -129,39 +147,6 @@
        </font>
       </property>
      </column>
-     <column>
-      <property name="text">
-       <string>라우팅 프로토콜</string>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>9</pointsize>
-       </font>
-      </property>
-     </column>
-    </widget>
-    <widget class="QLabel" name="routeTableText">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>0</y>
-       <width>101</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Cantarell Extra Bold</family>
-       <pointsize>9</pointsize>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color:rgb(94, 92, 100);</string>
-     </property>
-     <property name="text">
-      <string>라우팅 테이블</string>
-     </property>
     </widget>
    </widget>
   </widget>

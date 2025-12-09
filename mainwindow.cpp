@@ -2,13 +2,14 @@
 #include <QMessageBox>
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "RouterWorker.h"
+#include "RouteWorker.h"
 #include "DeviceInfoWorker.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
+    // 등록 창
     RegisterDeviceWindow* registerDeviceWindow = new RegisterDeviceWindow(this);
     registerDeviceWindow->setWindowModality(Qt::WindowModal);
     QSize dlgSize = registerDeviceWindow->size();
@@ -16,16 +17,16 @@ MainWindow::MainWindow(QWidget *parent)
     QPoint topLeft = center - QPoint(dlgSize.width()/2, dlgSize.height()/2);
     registerDeviceWindow->move(topLeft);
     registerDeviceWindow->show();
-
     connect(registerDeviceWindow, &RegisterDeviceWindow::startThreadRequested, this, &MainWindow::startMyThread);
 
-    // connect(ui->registDevice, &QPushButton::clicked, this, [this]() {
-    //     RegisterDeviceWindow* registerDeviceWindow = new RegisterDeviceWindow(nullptr);
-    //     registerDeviceWindow->show(); });
+    // route 테이블
+    connect(ui->routeTable, &QPushButton::clicked, this, [this]() {
+        RouteTableWindow* routeTableWindow = new RouteTableWindow(nullptr);
+        routeTableWindow->show(); });
 
-
+    // arp 테이블
     connect(ui->searchTable, &QPushButton::clicked, this, []() {
-        ArpTableWindow* tableWindow = new ArpTableWindow(nullptr);
+        arptablewindow* tableWindow = new arptablewindow(nullptr);
         tableWindow->show();});
 }
 
@@ -148,7 +149,7 @@ void MainWindow::showRouterInfo(Router* routerInfo) {
 
     int seconds = routerInfo->time / 100;
     int day = seconds / 86400;
-    int hour = (seconds & 86400) / 3600;
+    int hour = (seconds % 86400) / 3600;
     ui->routerTable->setItem(0, 4, new QTableWidgetItem(QString::number(day) + "일" + QString::number(hour) + "시간"));
 }
 

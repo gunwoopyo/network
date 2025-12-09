@@ -16,8 +16,10 @@ SOURCES += \
     ArpTableWorker.cpp \
     Port.cpp \
     PortWorker.cpp \
+    RouteTable.cpp \
+    RouteTableWorker.cpp \
+    RouteWorker.cpp \
     Router.cpp \
-    RouterWorker.cpp \
     arptablewindow.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -30,8 +32,11 @@ HEADERS += \
     ArpTableWorker.h \
     Port.h \
     PortWorker.h \
+    RouteTable.h \
+    RouteTableEntry.h \
+    RouteTableWorker.h \
+    RouteWorker.h \
     Router.h \
-    RouterWorker.h \
     Traffic.h \
     arptablewindow.h \
     mainwindow.h \
